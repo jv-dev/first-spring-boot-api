@@ -20,10 +20,8 @@ public class UserController {
     }
 
     @PostMapping(path = "/api/user/save")
-    public String register(@RequestBody User user) {
-        System.out.println("salvando o meliante " + user.getName());
-        repository.save(user);
-        return "sim";
+    public User register(@RequestBody User user) {
+        return repository.save(user);
     }
 
 }
