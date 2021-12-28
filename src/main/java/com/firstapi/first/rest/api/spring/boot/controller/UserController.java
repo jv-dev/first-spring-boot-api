@@ -1,6 +1,6 @@
 package com.firstapi.first.rest.api.spring.boot.controller;
 
-import com.firstapi.first.rest.api.spring.boot.model.UserModel;
+import com.firstapi.first.rest.api.spring.boot.model.User;
 import com.firstapi.first.rest.api.spring.boot.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +20,10 @@ public class UserController {
     }
 
     @PostMapping(path = "/api/user/save")
-    public UserModel register(@RequestBody UserModel user) {
-        return repository.save(user);
+    public String register(@RequestBody User user) {
+        System.out.println("salvando o meliante " + user.getName());
+        repository.save(user);
+        return "sim";
     }
 
 }

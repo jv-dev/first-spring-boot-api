@@ -4,11 +4,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity(name = "user")
-public class UserModel {
+@Entity(name="user_table")
+public class User {
 
     @Id
-    public Integer id;
+    public Integer code;
 
     @Column(nullable = false, length = 50)
     public String name;
@@ -19,12 +19,12 @@ public class UserModel {
     @Column(nullable = false, length = 10)
     public String password;
 
-    public Integer getId() {
-        return id;
+    public Integer getCode() {
+        return code;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setCode(Integer code) {
+        this.code = code;
     }
 
     public String getName() {
